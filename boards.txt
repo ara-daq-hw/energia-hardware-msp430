@@ -1,0 +1,125 @@
+##############################################################
+lpmsp430g2231.name=LaunchPad w/ msp430g2231 (1MHz)
+lpmsp430g2231.upload.protocol=rf2500
+lpmsp430g2231.upload.maximum_size=2048
+lpmsp430g2231.build.mcu=msp430g2231
+lpmsp430g2231.build.f_cpu=1000000L
+lpmsp430g2231.build.core=msp430
+lpmsp430g2231.build.variant=launchpad
+lpmsp430g2231.upload.maximum_ram_size=128
+
+##############################################################
+#lpmsp430g2231f.name=LaunchPad w/ msp430g2231 (16MHz)
+#lpmsp430g2231f.upload.protocol=rf2500
+#lpmsp430g2231f.upload.maximum_size=2048
+#lpmsp430g2231f.build.mcu=msp430g2231
+#lpmsp430g2231f.build.f_cpu=16000000L
+#lpmsp430g2231f.build.core=msp430
+#lpmsp430g2231f.build.variant=launchpad
+#lpmsp430g2231.upload.maximum_ram_size=128
+
+##############################################################
+lpmsp430g2452.name=LaunchPad w/ msp430g2452 (16MHz)
+lpmsp430g2452.upload.protocol=rf2500
+lpmsp430g2452.upload.maximum_size=8192
+lpmsp430g2452.build.mcu=msp430g2452
+lpmsp430g2452.build.f_cpu=16000000L
+lpmsp430g2452.build.core=msp430
+lpmsp430g2452.build.variant=launchpad
+lpmsp430g2452.upload.maximum_ram_size=256
+
+##############################################################
+lpmsp430g2553.name=LaunchPad w/ msp430g2553 (16MHz)
+lpmsp430g2553.upload.protocol=rf2500
+lpmsp430g2553.upload.maximum_size=16384
+lpmsp430g2553.build.mcu=msp430g2553
+lpmsp430g2553.build.f_cpu=16000000L
+lpmsp430g2553.build.core=msp430
+lpmsp430g2553.build.variant=launchpad
+lpmsp430g2553.upload.maximum_ram_size=512
+
+##############################################################
+lpmsp430fr5739.name=FraunchPad w/ msp430fr5739
+lpmsp430fr5739.upload.protocol=rf2500
+lpmsp430fr5739.upload.maximum_size=15872
+lpmsp430fr5739.build.mcu=msp430fr5739
+lpmsp430fr5739.build.f_cpu=16000000L
+lpmsp430fr5739.build.core=msp430
+lpmsp430fr5739.build.variant=fraunchpad
+lpmsp430fr5739.upload.maximum_ram_size=17408
+
+##############################################################
+
+lpmsp430f5529.name=LaunchPad w/ msp430f5529 (16MHz)
+lpmsp430f5529.upload.protocol=tilib
+lpmsp430f5529.upload.maximum_size=131072
+lpmsp430f5529.build.mcu=msp430f5529
+lpmsp430f5529.build.f_cpu=16000000L
+lpmsp430f5529.build.core=msp430
+lpmsp430f5529.build.variant=launchpad_f5529
+lpmsp430f5529.upload.maximum_ram_size=8192
+
+##############################################################
+lpmsp430f5529_25.name=LaunchPad w/ msp430f5529 (25MHz)
+lpmsp430f5529_25.upload.protocol=tilib
+lpmsp430f5529_25.upload.maximum_size=131072
+lpmsp430f5529_25.build.mcu=msp430f5529
+lpmsp430f5529_25.build.f_cpu=25000000L
+lpmsp430f5529_25.build.core=msp430
+lpmsp430f5529_25.build.variant=launchpad_f5529
+lpmsp430f5529_25.upload.maximum_ram_size=8192
+
+##############################################################
+lpmsp430fr5969.name=LaunchPad w/ msp430fr5969 (V2.0 and higher only!)
+lpmsp430fr5969.upload.protocol=tilib
+lpmsp430fr5969.upload.maximum_size=65536
+lpmsp430fr5969.build.mcu=msp430fr5969
+lpmsp430fr5969.build.f_cpu=16000000L
+#lpmsp430fr5969.build.f_cpu=8000000L
+lpmsp430fr5969.build.core=msp430
+lpmsp430fr5969.build.variant=launchpad_fr5969
+lpmsp430fr5969.upload.maximum_ram_size=2048
+
+##############################################################
+lpmsp430fr4133.name=LaunchPad w/ msp430fr4133
+lpmsp430fr4133.upload.protocol=tilib
+lpmsp430fr4133.upload.maximum_size=15360
+lpmsp430fr4133.build.mcu=msp430fr4133
+#lpmsp430fr4133.build.f_cpu=16000000L
+lpmsp430fr4133.build.f_cpu=8000000L
+lpmsp430fr4133.build.core=msp430
+lpmsp430fr4133.build.variant=launchpad_fr4133
+lpmsp430fr4133.upload.maximum_ram_size=2048
+
+##############################################################
+lpmsp430fr6989.name=LaunchPad w/ msp430fr6989
+lpmsp430fr6989.upload.protocol=tilib
+lpmsp430fr6989.upload.maximum_size=130048
+lpmsp430fr6989.build.mcu=msp430fr6989
+#lpmsp430fr6989.build.f_cpu=16000000L
+lpmsp430fr6989.build.f_cpu=8000000L
+lpmsp430fr6989.build.core=msp430
+lpmsp430fr6989.build.variant=launchpad_fr6989
+lpmsp430fr6989.upload.maximum_ram_size=2048
+
+##############################################################
+tiscv2.name=TISCv2 w/ msp430fr5987
+tiscv2.upload.protocol=tilib
+tiscv2.upload.maximum_size=64512
+tiscv2.build.mcu=msp430fr5987
+tiscv2.build.f_cpu=8000000L
+tiscv2.build.core=msp430
+tiscv2.build.variant=tiscv2_fr5987
+tiscv2.upload.maximum_ram_size=2048
+
+##############################################################
+aspspower.name=ASPS-POWER w/ msp430f2274
+aspspower.upload.protocol=tilib
+aspspower.upload.maximum_size=32768
+aspspower.build.mcu=msp430f2274
+aspspower.build.f_cpu=16000000L
+aspspower.build.core=msp430
+aspspower.build.variant=aspspower_f2274
+aspspower.upload.maximum_ram_size=1024
+
+##############################################################
