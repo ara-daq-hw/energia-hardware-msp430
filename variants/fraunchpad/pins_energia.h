@@ -63,14 +63,18 @@ static const uint8_t DEBUG_UARTTXD = 2;  /* Transmit Data (TXD) at P2.0 */
 #define DEBUG_UARTTXD_SET_MODE (PORT_SELECTION1 | OUTPUT)
 #define DEBUG_UART_MODULE_OFFSET 0x00
 #endif
+
+/* The MSP430FR5739 does have A1 support. Not sure why it didn't exist 
+   before. */
 #if defined(__MSP430_HAS_EUSCI_A1__)
-#define SERIAL1_AVAILABLE
 static const uint8_t AUX_UARTRXD = 4;
 static const uint8_t AUX_UARTTXD = 3;
 #define AUX_UARTRXD_SET_MODE (PORT_SELECTION1 | INPUT)
 #define AUX_UARTTXD_SET_MODE (PORT_SELECTION1 | OUTPUT)
 #define AUX_UART_MODULE_OFFSET 0x20
+#define SERIAL1_AVAILABLE 1
 #endif
+
 /* Analog pins */
 /* Note: the Ax assignment is according to energia.nu/Guide_MSP430FraunchPad.html 
    pin map, not the MSP430FR5739 device Analog channels (also named Ax) */
@@ -263,9 +267,9 @@ const uint16_t port_to_sel1[] = {
 const uint8_t digital_pin_to_timer[] = {
 	NOT_ON_TIMER,  /*  0 - pin count starts at 1 */
 	NOT_ON_TIMER,  /*  1 - VCC */
-	T2B0,          /*  2 - P2.0 */
-	T0B0,          /*  3 - P2.5 */
-	T1B0,          /*  4 - P2.6 */
+	NOT_ON_TIMER,  /*  2 - P2.0  - note: CCR0 output cannot be used with analogWrite */
+	NOT_ON_TIMER,  /*  3 - P2.5  - note: CCR0 output cannot be used with analogWrite */
+	NOT_ON_TIMER,  /*  4 - P2.6  - note: CCR0 output cannot be used with analogWrite */
 	T2B1,          /*  5 - P2.1 */
 	T2B2,          /*  6 - P2.2 */
 	T1B1,          /*  7 - P3.4 */
@@ -284,13 +288,19 @@ const uint8_t digital_pin_to_timer[] = {
 	T1A2,          /* 20 - P1.3 */
 	T0B1,          /* 21 - P1.4 */
 	T0B2,          /* 22 - P1.5 */
-	T2B0,          /* 23 - P4.0 */
+	NOT_ON_TIMER,  /* 23 - P4.0  - note: CCR0 output cannot be used with analogWrite */
 	NOT_ON_TIMER,  /* 24 - GND  */
 	/* LED's */
 	NOT_ON_TIMER,  /* 25 PJ.0 - LED1 */
 	NOT_ON_TIMER,  /* 26 PJ.1 - LED2 */
 	NOT_ON_TIMER,  /* 27 PJ.2 - LED3 */
 	NOT_ON_TIMER,  /* 28 PJ.3 - LED4 */
+	NOT_ON_TIMER,  /* 29 P4.1 */
+	NOT_ON_TIMER,  /* 30 P2.7 */
+	NOT_ON_TIMER,  /* 31 PJ.4 */
+	NOT_ON_TIMER,  /* 32 PJ.5 */
+	NOT_ON_TIMER,  /* 33 P2.3, using CCR0 output */
+	NOT_ON_TIMER,  /* 34 P2.4, using CCR0 output */
 };
 
 const uint8_t digital_pin_to_port[] = {
@@ -326,6 +336,10 @@ const uint8_t digital_pin_to_port[] = {
 	PJ,          /* 28 PJ.3 - LED4 */
 	P4,          /* 29 P4.1 - PUSH2 */
 	P2,          /* 30 P2.7 - ACC_ENABLE / NTC_ENABLE */
+	PJ,          /* 31 PJ.4 - XIN */
+	PJ,          /* 32 PJ.5 - XOUT */
+	P2,          /* 33 P2.3 */
+	P2,          /* 34 P2.4 */
 };
 
 const uint8_t digital_pin_to_bit_mask[] = {
@@ -361,7 +375,10 @@ const uint8_t digital_pin_to_bit_mask[] = {
 	BV(3),       /* 28 - PJ.3 - LED4 */
 	BV(1),       /* 29 - P4.1 - PUSH2 */
 	BV(7),       /* 30 - P2.7 - ACC_ENABLE / NTC_ENABLE */
-
+	BV(4),       /* 31 - PJ.4 */
+	BV(5),       /* 32 - PJ.5 */
+	BV(3),       /* 33 - P2.3 */
+	BV(4),       /* 34 - P2.4 */
 };
 
 const uint32_t digital_pin_to_analog_in[] = {
@@ -389,7 +406,17 @@ const uint32_t digital_pin_to_analog_in[] = {
         4,  			/*  21 - A1 (device analog channel 4) */
         5,  			/*  22 - A0 (device analog channel 5) */	
 		NOT_ON_ADC,		/*  23 - P4.0 */
-		NOT_ON_ADC		/*  24 - NC */
+	NOT_ON_ADC,		/*  24 - NC */
+	NOT_ON_ADC,             /*  25 */
+	NOT_ON_ADC,             /*  26 */
+	NOT_ON_ADC,             /*  27 */
+	NOT_ON_ADC,             /*  28 */
+	NOT_ON_ADC,             /*  29 */
+	NOT_ON_ADC,             /*  30 */
+	NOT_ON_ADC,             /*  31 */
+	NOT_ON_ADC,             /*  32 */
+	6,                      /*  33 - device analog channel 6 */
+	7,                      /*  34 - device analog channel 7 */
 };
 #endif
 #endif
