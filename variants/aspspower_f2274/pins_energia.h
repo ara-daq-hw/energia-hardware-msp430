@@ -63,8 +63,8 @@ static const uint8_t A2  = 5;   // P2.2
 static const uint8_t A3  = 6;   // P2.3
 static const uint8_t A4  = 7;   // P2.4
 static const uint8_t A5  = 17;  // P3.0
-//static const uint8_t A6  = ?; // P3.6 not broken out
-static const uint8_t A7  = 30; // P3.7 not broken out
+static const uint8_t A6  = 36; // P3.6 
+static const uint8_t A7  = 30; // P3.7 
 static const uint8_t A10 = 128 + 10; // special. This is the internal temp sensor
 //static const uint8_t A11 = ?; // no pin
 static const uint8_t A12  = 8;  // P4.3
@@ -151,7 +151,7 @@ static const uint8_t P1_2 = 22;
 static const uint8_t P3_4 = 24;
 static const uint8_t P3_5 = 25;
 
-/* ASPS-Power new. We add 9 additional pins. */
+/* ASPS-Power new. We add 10 additional pins. */
 static const uint8_t P1_4 = 26;
 static const uint8_t P1_5 = 27;
 static const uint8_t P1_6 = 28;
@@ -161,6 +161,8 @@ static const uint8_t P4_0 = 31;
 static const uint8_t P4_1 = 32;
 static const uint8_t P4_2 = 33;
 static const uint8_t P4_7 = 34;
+static const uint8_t P1_3 = 35;
+static const uint8_t P3_6 = 36;
 
 // Useful names.
 static const uint8_t LED0 = 28;
@@ -244,8 +246,9 @@ const uint8_t digital_pin_to_timer[] = {
 	T0B0,         /* 31 - P4.0, note: B0 output cannot be used with analogWrite */
 	T0B1,         /* 32 - P4.1 */
 	T0B2,         /* 33 - P4.2 */
-	NOT_ON_TIMER  /* 34 - P4.7 */
-	
+	NOT_ON_TIMER, /* 34 - P4.7 */
+	T0A2,	      /* 35 - P1.3 */
+	NOT_ON_TIMER, /* 36 - P3.6 */
 };
 
 const uint8_t digital_pin_to_port[] = {
@@ -283,7 +286,9 @@ const uint8_t digital_pin_to_port[] = {
 	P4,        /* 31 - P4.0 */
 	P4,        /* 32 - P4.1 */
 	P4,        /* 33 - P4.2 */
-	P4         /* 34 - P4.7 */
+	P4,        /* 34 - P4.7 */
+	P1,        /* 35 - P1.3 */
+	P3,        /* 36 - P3.6 */	
 };
 
 const uint8_t digital_pin_to_bit_mask[] = {
@@ -321,7 +326,9 @@ const uint8_t digital_pin_to_bit_mask[] = {
 	BV(0),     /* 31 - P4.0 */
 	BV(1),     /* 32 - P4.1 */
 	BV(2),     /* 33 - P4.2 */
-	BV(7)      /* 34 - P4.7 */
+	BV(7),     /* 34 - P4.7 */
+	BV(3),     /* 35 - P1.3 */
+	BV(6),     /* 36 - P3.6 */
 };
 
 const uint32_t digital_pin_to_analog_in[] = {
@@ -359,7 +366,9 @@ const uint32_t digital_pin_to_analog_in[] = {
 	NOT_ON_ADC, /* 31 - P4.0 */
 	NOT_ON_ADC, /* 32 - P4.1 */
 	NOT_ON_ADC, /* 33 - P4.2 */
-	NOT_ON_ADC  /* 34 - P4.7 */
+	NOT_ON_ADC, /* 34 - P4.7 */
+	NOT_ON_ADC, /* 35 - P1.3 */
+	6,          /* 36 - P3.6 */
 };
 
 #endif // #ifdef ARDUINO_MAIN
